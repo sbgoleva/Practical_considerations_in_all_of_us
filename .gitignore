@@ -1,49 +1,230 @@
-# History files
+# =============================================================================
+# R
+# =============================================================================
+
+# History and session files
 .Rhistory
 .Rapp.history
-
-# Session Data files
 .RData
 .RDataTmp
-
-# User-specific files
 .Ruserdata
 
-# Example code in package build process
+# Environment files
+.Renviron
+.Rprofile
+
+# Package build/check outputs
 *-Ex.R
-
-# Output files from R CMD build
 /*.tar.gz
-
-# Output files from R CMD check
 /*.Rcheck/
 
-# RStudio files
+# RStudio
 .Rproj.user/
+rsconnect/
 
-# produced vignettes
+# Vignettes
 vignettes/*.html
 vignettes/*.pdf
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+# OAuth
 .httr-oauth
 
-# knitr and R markdown default cache directories
+# knitr / R Markdown
 *_cache/
 /cache/
-
-# Temporary files created by R markdown
 *.utf8.md
 *.knit.md
 
-# R Environment Variables
-.Renviron
-
-# pkgdown site
+# pkgdown
 docs/
 
-# translation temp files
+# Translation temp files
 po/*~
 
-# RStudio Connect folder
-rsconnect/
+# =============================================================================
+# Python
+# =============================================================================
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# Jupyter / IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+renv/
+
+# Python version management
+.python-version
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# IDEs
+.spyderproject
+.spyproject
+.ropeproject
+.idea/
+
+# Documentation
+/site
+
+# =============================================================================
+# Project-specific
+# =============================================================================
+
+# Local development
+local/
+old_version/
+.devcontainer/
+
+# Docker
+docker/
+
+# Claude
+.claude/
+CLAUDE.md
+
+# Benchmarking
+benchmark/
+
+# Setup script
+setup.py
+
+# OS files
+.DS_Store
+**/Thumbs.db
+
+# =============================================================================
+# Data
+# =============================================================================
+
+# Tabular data
+**/*.csv
+**/*.xlsx
+**/*.xls
+**/*.dta
+**/*.sav
+**/*.dat
+
+# R data
+**/*.RDS
+**/*.rds
+**/*.rda
+**/*.rdata
+**/*.Rdata
+
+# Databases
+**/*.db
+**/*.dbf
+**/*.mdb
+
+# Structured data
+**/*.xml
+**/*.sql
+
+# Archives
+**/*.tar
+
+# Large analytical files
+*.parquet
+*.feather
+*.h5
+*.pkl
+
+# Logs
+**/*.log
+
+# =============================================================================
+# Images
+# =============================================================================
+
+**/*.ai
+**/*.bmp
+**/*.gif
+**/*.ico
+**/*.jpeg
+**/*.jpg
+**/*.png
+**/*.ps
+**/*.psd
+**/*.svg
+**/*.tif
+**/*.tiff
+
+# =============================================================================
+# Other outputs
+# =============================================================================
+
+**/*.html
+**/*.pdf
