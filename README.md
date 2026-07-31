@@ -1,5 +1,5 @@
 # Practical Considerations for Phenomic and Genomic Analyses in the *All of Us* Research Program
-This workspace accompanies the manuscript *Practical Considerations for Phenomic and Genomic Analyses in the All of Us Research Program* and contains code examples demonstrating analytical workflows in the *All of Us* Researcher Workbench.
+This workspace accompanies the manuscript *"Practical Considerations for Phenomic and Genomic Analyses in the All of Us Research Program"* and contains code examples demonstrating analytical workflows in the *All of Us* Researcher Workbench.
 ## Repository Structure
 ```
 Practical_considerations_in_all_of_us/
