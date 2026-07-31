@@ -30,10 +30,10 @@ Contains supporting files required to run certain notebooks. Each file's generat
 | `04_query_pharmacogenomic_tables.ipynb` | Generates **Supplementary Table 5** (Subset of Available All of Us Pharmacogenetic Data). |
 | `05.1_v9_Height_PRS.ipynb` | Computes the height polygenic risk score (PRS) used in **Figure 5**. |
 | `05.2_v9_PYTHON_PRS_PLOT.ipynb` | Generates the PRS plots for **Figure 5**, using output from `05.1_v9_Height_PRS.ipynb` and `External_files/height_prs.tsv`. |
-| `06.1_HM_hypothyroidism_id_v1.ipynb` | Part of the primary autoimmune hypothyroidism case study — nomenclature/ID consistency step. Contributes to **Figure 3**. |
-| `06.2_CB_case_phenotype_algorithm_V2_SQL_query.ipynb` | SQL-based case phenotyping algorithm for primary autoimmune hypothyroidism. Contributes to **Figure 3**. |
-| `06.3_CB_GWAS_MF.ipynb` | Runs the GWAS (male/female stratified) for the hypothyroidism phenotype. Contributes to **Figure 3**. |
-| `06.4_Plotting_cohorts_and_gwas.ipynb` | Plots cohort comparisons and GWAS results (e.g., Manhattan plots). Contributes to **Figure 3**. |
+| `06.1_HM_hypothyroidism_id_v1.ipynb` | User-written SQL case-control cohort phenotyping algorithm implementation for primary autoimmune hypothyroidism. Contributes to **Figure 3**. |
+| `06.2_CB_case_phenotype_algorithm_V2_SQL_query.ipynb` | Cohort-builder generated case-control cohort phenotyping algorithm implementation for primary autoimmune hypothyroidism. Contributes to **Figure 3**. |
+| `06.3_CB_GWAS_MF.ipynb` | Runs the GWAS for the hypothyroidism phenotype in both CB and SQL cohorts. Contributes to **Figure 3**. |
+| `06.4_Plotting_cohorts_and_gwas.ipynb` | Plots CB and SQL cohort comparisons and GWAS results (i.e., beta comparison scatter plot, Manhattan plots, identifying top peaks). Contributes to **Figure 3**. |
 
 > **Note:** Notebooks `06.1`–`06.4` together produce **Figure 3** (Comparison of Cohort Builder- and SQL-Based Phenotyping and GWAS Results for Primary Autoimmune Hypothyroidism), comparing Cohort Builder-based and SQL-based approaches to case phenotyping and downstream GWAS.
 
