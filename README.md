@@ -3,16 +3,9 @@ This workspace accompanies the manuscript *"Practical Considerations for Phenomi
 ## Repository Structure
 ```
 Practical_considerations_in_all_of_us/
-├── External_files/
-└── Notebooks/
+├── Notebooks/
+└── External_files/
 ```
-### External_files
-Contains supporting files required to run certain notebooks. Each file's generation is documented within the notebook that uses it.
-| File | Used by | Description |
-|---|---|---|
-| `height_prs.tsv` | `06.2_prs_height_plot_v9.ipynb` | Height PRS scores used for the PRS plotting script |
-| `zip3_population_density_2014_2023.csv` | `02_geographic_distribution_and_wildfire_smoke_map_v9.ipynb` | Population density by 3-digit ZIP code |
-| `zip3_year_light_med_heavy_2014_2025.csv` | `02_geographic_distribution_and_wildfire_smoke_map_v9.ipynb` | Wildfire smoke exposure data by 3-digit ZIP code and year |
 ### Notebooks
 Notebooks are numbered in the order their outputs first appear in the manuscript.
 | Notebook | Description |
@@ -28,6 +21,13 @@ Notebooks are numbered in the order their outputs first appear in the manuscript
 | `06.1_prs_height_calculation_v9.ipynb` | Computes the height polygenic risk score (PRS) used in **Figure 5** ("Typical Workflow for Height PRS Calculation and Validation using Measured Height in *All of Us* Participants"). |
 | `06.2_prs_height_plot_v9.ipynb` | Generates the PRS plots for **Figure 5**, using output from `06.1_prs_height_calculation_v9.ipynb` and `External_files/height_prs.tsv`. |
 > **Note:** Notebooks `03.1`–`03.4` together produce **Figure 3**, comparing Cohort Builder-based and user-written SQL-based approaches to phenotype hypothyroidism cases and controls and perform downstream GWAS for comparison between the two approaches.
+### External_files
+Contains supporting files required to run certain notebooks. Each file's generation is documented within the notebook that uses it.
+| File | Used by | Description |
+|---|---|---|
+| `height_prs.tsv` | `06.2_prs_height_plot_v9.ipynb` | Height PRS scores used for the PRS plotting script |
+| `zip3_population_density_2014_2023.csv` | `02_geographic_distribution_and_wildfire_smoke_map_v9.ipynb` | Population density by 3-digit ZIP code |
+| `zip3_year_light_med_heavy_2014_2025.csv` | `02_geographic_distribution_and_wildfire_smoke_map_v9.ipynb` | Wildfire smoke exposure data by 3-digit ZIP code and year |
 >
 ## License
 GPL-3.0
