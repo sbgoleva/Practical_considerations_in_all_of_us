@@ -49,29 +49,39 @@ import time
 #                             on "from google.cloud import bigquery").
 #   grpcio >= 1.83.0        : removes the "grpcio < 1.83.0 / post-quantum"
 #                             FutureWarning printed by the Google packages.
+#   protobuf >= 6.33.5      : the preinstalled Google packages (imported by
+#                             gcsfs) were generated with a newer protobuf than the
+#                             image's runtime, which raises "VersionError:
+#                             Detected incompatible Protobuf Gencode/Runtime
+#                             versions". The runtime cannot be older than the
+#                             generated code.
 # If either is already loaded in this kernel, restart the kernel after this
 # script finishes and re-run.
-def _fix_google_packages(reqs=("google-api-core>=2.26", "grpcio>=1.83.0")):
+def _fix_google_packages(reqs=("google-api-core>=2.26", "grpcio>=1.83.0",
+                               ("protobuf>=6.33.5", "protobuf>=6.33.5,<7"))):
+    # Each entry is a requirement to check, or (check, install) when the install
+    # should be capped (protobuf: accept any >= 6.33.5 but install 6.x only).
     try:
         import importlib
         import importlib.metadata as md
         from packaging.requirements import Requirement
         todo = []
-        for spec in reqs:
+        for entry in reqs:
+            spec, install_spec = entry if isinstance(entry, tuple) else (entry, entry)
             r = Requirement(spec)
             try:
                 ok = r.specifier.contains(md.version(r.name), prereleases=True)
             except md.PackageNotFoundError:
                 ok = False
             if not ok:
-                todo.append(spec)
+                todo.append(install_spec)
         if not todo:
             return
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-q",
                                "--no-deps", "--upgrade", *todo])
         importlib.invalidate_caches()
         print("Upgraded:", todo)
-        if any(m in sys.modules for m in ("grpc", "google.api_core")):
+        if any(m in sys.modules for m in ("grpc", "google.api_core", "google.protobuf")):
             print("RESTART THE KERNEL and re-run: google packages were already "
                   "loaded in this kernel, so the upgrade takes effect after a restart.")
     except Exception as e:  # never fail the notebook over this
@@ -99,6 +109,9 @@ def _wb(*args):
 # Get workspace info
 _workspace = _wb("workspace", "describe")
 GOOGLE_CLOUD_PROJECT = _workspace["googleProjectId"]
+# Also expose it as an environment variable, which gcsfs/gsutil/shell cells read
+# (for example requester-pays reads of All of Us buckets).
+os.environ.setdefault("GOOGLE_CLOUD_PROJECT", GOOGLE_CLOUD_PROJECT)
 
 # Get resources
 _resources = _wb("resource", "list")
