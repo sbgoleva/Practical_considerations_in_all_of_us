@@ -1,6 +1,6 @@
 """
 00.1_run_summary.py
-Run at the END of a notebook (after 00_setup_workspace_env.py was run at the
+Run at the END of a notebook (after 00.0_setup_workspace_env.py was run at the
 start). Prints the CDR, the version of every third-party package the notebook
 imported, and the total wall-clock runtime, so they are saved in the notebook's
 output.
@@ -122,7 +122,7 @@ if "_NB_START" in globals():
     print("  Notebook end:  ", _dt.datetime.now().astimezone().isoformat(timespec="seconds"))
     print(f"  Wall-clock runtime: {_el/3600:.2f} h ({_el/60:.1f} min)")
 else:
-    print("  Runtime unavailable: run 00_setup_workspace_env.py at the start of the notebook.")
+    print("  Runtime unavailable: run 00.0_setup_workspace_env.py at the start of the notebook.")
 
 for _n in ("_ast", "_dt", "_md", "_iu", "_os", "_sys", "_time", "_imported_packages",
            "_found", "_p", "_v", "_el", "_n"):
